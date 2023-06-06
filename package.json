@@ -1,0 +1,30 @@
+{
+  "name": "21_new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "npx cypress run",
+    "cy:test1": "cypress run --spec 'C:/Jenkins/21_new/cypress/e2e/folder1/test_1.cy.js'",
+    "cy:test2": "cypress run --spec 'C:/Jenkins/21_new/cypress/e2e/folder2/test_2.cy.js'",
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d 'C:/Jenkins/21_new/cypress/e2e'",
+    "cy:parallel:dashboard": "cypress-parallel -s cy:run -t 2 -d 'C:/Jenkins/21_new/cypress/e2e' --record --key dac26232-8b2f-4d4a-a0a2-473afc5a106c",
+    "cy:tests:dashboard": "npm run cy:test1  -- --group chrome --ci-build-id %BUILD_NUMBER% --parallel --record --key dac26232-8b2f-4d4a-a0a2-473afc5a106c & npm run cy:test2  -- --group electron --ci-build-id %BUILD_NUMBER% --parallel --record --key dac26232-8b2f-4d4a-a0a2-473afc5a106c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iren1968/21HW.git"
+  },
+  "author": "Iren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iren1968/21HW/issues"
+  },
+  "homepage": "https://github.com/Iren1968/21HW#readme",
+  "devDependencies": {
+    "cypress": "^12.13.0"
+  },
+  "dependencies": {
+    "cypress-parallel": "^0.13.0"
+  }
+}
