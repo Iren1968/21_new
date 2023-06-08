@@ -13,6 +13,7 @@ module.exports = defineConfig({
     supportFile: false,
     setupNodeEvents(on, config) {
       allureWriter(on, config);
+      return config;
       // implement node event listeners here
     },
   },
